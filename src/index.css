@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    scroll-behavior: smooth;
+    --ip-red:   #CC0000;  /* InstaPass crimson — INSTA wordmark */
+    --ip-black: #111111;  /* PASS wordmark */
+  }
+  body { @apply bg-gray-950 text-white antialiased; }
+}
+
+/* InstaPass gradient — matches actual logo red */
+.gradient-text {
+  background: linear-gradient(135deg, #CC0000, #FF3333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Speed lines — the signature IPIC visual element */
+.speed-lines::after {
+  content: '';
+  display: block;
+  margin-top: 3px;
+  height: 5px;
+  background: repeating-linear-gradient(
+    to bottom,
+    currentColor 0, currentColor 1.2px,
+    transparent 1.2px, transparent 2.8px
+  );
+  border-radius: 1px;
+  width: 100%;
+}
+
+.glass {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+}

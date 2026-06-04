@@ -1,19 +1,26 @@
 {
-  "name": "marketing-site",
+  "name": "@ipic/marketing-site",
   "version": "0.1.0",
-  "description": "Public marketing site, landing pages, and campaign management for InstaPass platform.",
-  "main": "src/index.ts",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "build": "tsc",
-    "lint": "eslint . --ext .ts,.tsx",
-    "test": "vitest"
+    "dev":     "vite --port 5191",
+    "build":   "tsc -b && vite build",
+    "preview": "vite preview"
   },
-  "keywords": ["marketing", "landing", "campaign", "instapass"],
-  "author": "IPIC-Tech",
-  "license": "MIT",
+  "dependencies": {
+    "lucide-react": "^0.462.0",
+    "react":        "^18.3.1",
+    "react-dom":    "^18.3.1"
+  },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "eslint": "^8.0.0",
-    "vitest": "^0.34.0"
+    "@types/react":        "^18.3.12",
+    "@types/react-dom":    "^18.3.1",
+    "@vitejs/plugin-react":"^4.3.3",
+    "autoprefixer":        "^10.4.20",
+    "postcss":             "^8.4.47",
+    "tailwindcss":         "^3.4.15",
+    "typescript":          "^5.6.3",
+    "vite":                "^5.4.11"
   }
 }
